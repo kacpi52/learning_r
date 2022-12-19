@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { AlertBox, Menu, ShopLayout } from "../Components/index";
-import SELECTORS from "../Utils/Selectors";
+import { Menu, ShopLayout } from "../Components/index";
+import SELECTORS from "../Utils/Selectors/xmlSelectors";
 
 const Shop = () => {
   const [mainItemsArray, setMainItemsArray] = useState([]);
@@ -36,7 +36,6 @@ const Shop = () => {
 
   return (
     <>
-      <AlertBox />
       <Menu />
       <ShopLayout mainItemsArray={mainItemsArray} />
     </>

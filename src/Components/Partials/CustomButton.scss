@@ -1,0 +1,18 @@
+$baseColor: rgb(10, 161, 141);
+$hoverColor: rgb(247, 33, 219);
+.globalDarkButton {
+  width: 10rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: $baseColor;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 1rem;
+  &:hover {
+    background-color: $hoverColor;
+  }
+  &--hidden {
+    display: none;
+  }
+}

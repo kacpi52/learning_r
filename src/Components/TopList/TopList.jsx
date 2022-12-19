@@ -3,6 +3,7 @@ import './TopList.scss';
 import {Container, Row} from 'react-bootstrap';
 import SingleElem from './SingleElem';
 import { titleArray } from './TitleArray';
+import CustomButton from '../Partials/CustomButton';
 
 
 
@@ -16,12 +17,13 @@ const TopList = () => {
     }
     return (
         <div className='List'>
-            <button className={listSize<30 ? 'List__button' : 'List__button--hidden'}
-                onClick={() => {
-                     setListSize(listSize + 10)
-                }}>
-                 {listSize>0 ? 'SHOW MORE' : 'TOP 10'}
-                 </button>
+                 <CustomButton 
+                 className={listSize<30 ? 'globalDarkButton' : 'globalDarkButton--hidden'}
+                 textLabel={listSize>0 ? 'SHOW MORE' : 'TOP 10'}
+                 onClick={() => {
+                    setListSize(listSize + 10)
+                 }}
+                />
             <Container>
                 <Row>
                     {displayArray}

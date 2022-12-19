@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 import UserPage from './pages/UserPage';
 import React from 'react'
 import Shop from './pages/Shop';
-import GamePage from './pages/GamePage';
+import './Lib/Themes/FontsBackgrounds.scss'
 
 function App() {
   return (
@@ -14,7 +14,6 @@ function App() {
         <Route exact path="/" component={HomePage}/>
         <Route exact path="/UserPage" component={UserPage} />
         <Route exact path="/Shop" component={Shop} />
-        <Route exact path="/Game" component={GamePage} />
       </Switch>
     </Router>
   );
