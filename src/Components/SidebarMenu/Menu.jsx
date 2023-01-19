@@ -22,7 +22,7 @@ const Menu = () => {
               <DropDown title="SHOP" showLoginPanel={showLoginPanel} />
             </Col>
             <Col xs={3}>
-              <DropDown title="GAME" showLoginPanel={showLoginPanel} />
+              <DropDown title="USER " showLoginPanel={showLoginPanel} />
             </Col>
             <Col xs={3}>
               <DropDown title="ABOUT US" showLoginPanel={showLoginPanel} />
