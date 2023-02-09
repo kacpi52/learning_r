@@ -1,5 +1,5 @@
 import React from "react";
-import {  Menu, TopList } from "../Components/index";
+import { Menu, TopListLayout } from "../Components/index";
 
 const HomePage = () => {
   return (
@@ -7,7 +7,7 @@ const HomePage = () => {
       <Menu />
       <h1>Home Page</h1>
       <p>Main page of this website.</p>
-      <TopList />
+      <TopListLayout />
     </div>
   );
 };
