@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, ShopLayout } from "../Components/index";
-import convertXmlToArray from "../Lib/convertXmlToArray";
+import convertXmlToArray from "../Lib/convertXml/convertXmlToArray";
 
 const Shop = () => {
   const [mainItemsArray, setMainItemsArray] = useState([]);

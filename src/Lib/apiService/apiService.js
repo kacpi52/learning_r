@@ -1,15 +1,14 @@
-const API_LINK = "https://www.omdbapi.com";
-const API_KEY = "2eb14caf";
+import axios from "axios";
 
 export const searchByTitle = async (movieTitle) => {
   if (typeof movieTitle == "undefined" || movieTitle == "") {
     return {};
   }
   try {
-    const apiConnect = await fetch(
-      `${API_LINK}/?t=${movieTitle}&apikey=${API_KEY}`
+    const { data } = await axios.get(
+      `${movieTitle}&apikey=${process.env.REACT_APP_MOVIES_API_KEY}`
     );
-    return apiConnect.json();
+    return data;
   } catch (error) {
     console.log(`error from fetching api : ${error}`);
     throw error;
