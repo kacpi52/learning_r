@@ -1,3 +1,3 @@
-import TopList from "./TopList";
+import TopListLayout from "./TopListLayout";
 
-export default TopList;
+export default TopListLayout;

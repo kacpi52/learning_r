@@ -9,8 +9,22 @@ $hoverColor: rgb(247, 33, 219);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 1rem;
+  display: flex;
   &:hover {
     background-color: $hoverColor;
+  }
+  &--bottom {
+    position: fixed;
+    bottom: 5rem;
+    width: 10rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: $baseColor;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 1rem;
+    display: flex;
   }
   &--hidden {
     display: none;
