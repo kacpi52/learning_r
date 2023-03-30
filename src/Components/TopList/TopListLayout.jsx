@@ -4,7 +4,7 @@ import { Container, Row } from "react-bootstrap";
 import SingleElem from "./SingleElem";
 import { titleCollection } from "../../Lib/titleCollection/titleCollection";
 import CustomButton from "../CustomButton/index";
-import { searchByTitle } from "../../Lib/apiService";
+import { searchByTitle } from "../../Lib/apiService/apiService";
 
 const TopListLayout = () => {
   const [listSize, setListSize] = useState(0);

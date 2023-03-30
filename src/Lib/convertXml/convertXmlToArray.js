@@ -1,11 +1,14 @@
-import SELECTORS from "../Utils/Selectors/xmlSelectors";
+import axios from "axios";
+import SELECTORS from "../../Utils/Selectors/xmlSelectors";
 
 const convertXmlToArray = async () => {
-  const fetchXml = await fetch(SELECTORS.filePath);
-  const xmlToText = await fetchXml.text();
+  const xmlConvertToArrayAxiosInstance = axios.create({
+    baseURL: SELECTORS.filePath,
+  });
+  const { data } = await xmlConvertToArrayAxiosInstance.get();
   const xmlToDomObj = new window.DOMParser().parseFromString(
-    xmlToText,
-    "text/xml"
+    data,
+    "application/xml"
   );
   const xmlOElems = xmlToDomObj.getElementsByTagName(SELECTORS.tagSelectorByO);
   const xmlElemsArr = Array.from(xmlOElems);
