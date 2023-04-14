@@ -2,10 +2,9 @@ import React from "react";
 import { Menu } from "../Components/index";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  deleteAllDataGlobalState,
   deleteMovieDataGlobalState,
   deleteXmlDataGlobalState,
-} from "../Lib/globalState";
+} from "../Lib/store";
 const UserPage = () => {
   const globalState = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -39,13 +38,7 @@ const UserPage = () => {
         delete movie data
       </button>
       <br />
-      <button
-        onClick={() => {
-          dispatch(deleteAllDataGlobalState());
-        }}
-      >
-        delete all data
-      </button>
+
       <p>Xml elems in global state is: </p>
       <p>Movies elems in global state is: </p>
     </>

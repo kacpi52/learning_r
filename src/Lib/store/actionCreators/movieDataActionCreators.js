@@ -1,7 +1,7 @@
 // type: required
 //payload: optional
 
-import MOVIE_DATA_ACTION_TYPES from "../actionTypes/movieDataActionTypes";
+import { MOVIE_DATA_ACTION_TYPES } from "../actionTypes";
 
 const addMovieDataGlobalState = (dataArray) => ({
   type: MOVIE_DATA_ACTION_TYPES.ADD_MOVIE_DATA_GLOBAL_STATE,

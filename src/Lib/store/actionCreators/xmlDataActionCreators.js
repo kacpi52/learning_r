@@ -1,7 +1,7 @@
 // type: required
 //payload: optional
 
-import XML_DATA_ACTION_TYPES from "../actionTypes/xmlDataActionTypes";
+import { XML_DATA_ACTION_TYPES } from "../actionTypes";
 
 const addXmlDataGlobalState = (dataArray) => ({
   type: XML_DATA_ACTION_TYPES.ADD_XML_DATA_GLOBAL_STATE,

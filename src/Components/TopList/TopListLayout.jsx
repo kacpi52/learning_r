@@ -3,10 +3,10 @@ import { useDispatch } from "react-redux";
 import "./TopList.scss";
 import { Container, Row } from "react-bootstrap";
 import SingleElem from "./SingleElem";
-import { titleCollection } from "../../Lib/titleCollection/titleCollection";
+import { titleCollection } from "../../Utils/titleCollection";
 import CustomButton from "../CustomButton/index";
-import { searchByTitle } from "../../Lib/apiService/apiService";
-import { addMovieDataGlobalState } from "../../Lib/globalState";
+import searchByTitle from "../../Lib/apiService";
+import { addMovieDataGlobalState } from "../../Lib/store";
 
 const TopListLayout = () => {
   const [listSize, setListSize] = useState(0);
@@ -39,7 +39,7 @@ const TopListLayout = () => {
           setMoviesDataHolder((arr) => [...arr, apiRespData]);
           tempDataArray.push(apiRespData);
         }
-        dispatch(addMovieDataGlobalState(tempDataArray));
+        dispatch(addMovieDataGlobalState(moviesDataHolder));
         break;
     }
   };

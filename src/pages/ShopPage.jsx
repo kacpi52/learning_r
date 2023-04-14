@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Menu, ShopLayout } from "../Components/index";
-import convertXmlToArray from "../Lib/convertXml/convertXmlToArray";
-import { addXmlDataGlobalState } from "../Lib/globalState";
+import convertXmlToArray from "../Lib/convertXml";
+import { addXmlDataGlobalState } from "../Lib/store";
 
-const Shop = () => {
+const ShopPage = () => {
   const [mainItemsArray, setMainItemsArray] = useState([]);
   const dispatch = useDispatch();
 
@@ -25,4 +25,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default ShopPage;

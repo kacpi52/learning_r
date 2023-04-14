@@ -27,7 +27,7 @@ const DropDown = ({ title, showLoginPanel }) => {
             </Link>
           </li>
           <li>
-            <Link to="/Shop" onClick={DropMenu} className="homePageLink">
+            <Link to="/ShopPage" onClick={DropMenu} className="homePageLink">
               Shop
             </Link>
           </li>

@@ -1,12 +1,10 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import HomePage from "./pages/HomePage";
-import UserPage from "./pages/UserPage";
 import React from "react";
-import Shop from "./pages/Shop";
+import { ShopPage, UserPage, HomePage } from "./pages";
 import "./Lib/Themes/FontsBackgrounds.scss";
-import "./Lib/axiosConfig/axiosConfig";
+import "./Lib/axiosConfig";
 
 function App() {
   return (
@@ -14,7 +12,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/UserPage" component={UserPage} />
-        <Route exact path="/Shop" component={Shop} />
+        <Route exact path="/ShopPage" component={ShopPage} />
       </Switch>
     </Router>
   );

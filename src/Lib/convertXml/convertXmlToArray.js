@@ -1,5 +1,5 @@
 import axios from "axios";
-import SELECTORS from "../../Utils/Selectors/xmlSelectors";
+import SELECTORS from "../../Utils/Selectors";
 
 const convertXmlToArray = async () => {
   const xmlConvertToArrayAxiosInstance = axios.create({
