@@ -6,7 +6,7 @@ import SingleElem from "./SingleElem";
 import { titleCollection } from "../../Lib/titleCollection/titleCollection";
 import CustomButton from "../CustomButton/index";
 import { searchByTitle } from "../../Lib/apiService/apiService";
-import { addDataGlobalState } from "../../Lib/globalState";
+import { addMovieDataGlobalState } from "../../Lib/globalState";
 
 const TopListLayout = () => {
   const [listSize, setListSize] = useState(0);
@@ -23,7 +23,7 @@ const TopListLayout = () => {
           setMoviesDataHolder((arr) => [...arr, apiRespData]);
           tempDataArray.push(apiRespData);
         }
-        dispatch(addDataGlobalState("api", tempDataArray));
+        dispatch(addMovieDataGlobalState(tempDataArray));
         break;
       case 10:
         for (let i = listSize; i < listSize + resultsStep; i++) {
@@ -31,7 +31,7 @@ const TopListLayout = () => {
           setMoviesDataHolder((arr) => [...arr, apiRespData]);
           tempDataArray.push(apiRespData);
         }
-        dispatch(addDataGlobalState("api", tempDataArray));
+        dispatch(addMovieDataGlobalState(tempDataArray));
         break;
       case 20:
         for (let i = listSize; i < listSize + resultsStep; i++) {
@@ -39,7 +39,7 @@ const TopListLayout = () => {
           setMoviesDataHolder((arr) => [...arr, apiRespData]);
           tempDataArray.push(apiRespData);
         }
-        dispatch(addDataGlobalState("api", tempDataArray));
+        dispatch(addMovieDataGlobalState(tempDataArray));
         break;
     }
   };

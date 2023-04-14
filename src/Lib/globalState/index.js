@@ -1,7 +1,4 @@
-import { legacy_createStore as createStore } from "redux";
-import dataReducer from "./reducers/dataReducers";
-
-const store = createStore(dataReducer);
-
-export * from "./actions/dataActionCreators";
-export default store;
+export * from "./actionCreators/allDataActionCreators";
+export * from "./actionCreators/movieDataActionCreators";
+export * from "./actionCreators/xmlDataActionCreators";
+export * from "./store/store";

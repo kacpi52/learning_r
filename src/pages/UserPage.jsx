@@ -3,7 +3,8 @@ import { Menu } from "../Components/index";
 import { useSelector, useDispatch } from "react-redux";
 import {
   deleteAllDataGlobalState,
-  deleteDataGlobalState,
+  deleteMovieDataGlobalState,
+  deleteXmlDataGlobalState,
 } from "../Lib/globalState";
 const UserPage = () => {
   const globalState = useSelector((state) => state);
@@ -16,7 +17,7 @@ const UserPage = () => {
       <h4>Temporary used for global state check </h4>
       <button
         onClick={() => {
-          dispatch(deleteDataGlobalState("xml"));
+          dispatch(deleteXmlDataGlobalState());
         }}
       >
         delete xml data
@@ -24,7 +25,15 @@ const UserPage = () => {
       <br />
       <button
         onClick={() => {
-          dispatch(deleteDataGlobalState("api"));
+          console.log(globalState);
+        }}
+      >
+        check state
+      </button>
+      <br />
+      <button
+        onClick={() => {
+          dispatch(deleteMovieDataGlobalState());
         }}
       >
         delete movie data
@@ -37,10 +46,8 @@ const UserPage = () => {
       >
         delete all data
       </button>
-      <p>Xml elems in global state is: {globalState.dataFromXml.length}</p>
-      <p>
-        Movies elems in global state is: {globalState.dataFromMovieApi.length}
-      </p>
+      <p>Xml elems in global state is: </p>
+      <p>Movies elems in global state is: </p>
     </>
   );
 };
