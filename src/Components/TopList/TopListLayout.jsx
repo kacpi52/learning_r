@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./TopList.scss";
 import { Container, Row } from "react-bootstrap";
 import SingleElem from "./SingleElem";
@@ -12,36 +12,18 @@ const TopListLayout = () => {
   const [listSize, setListSize] = useState(0);
   const [moviesDataHolder, setMoviesDataHolder] = useState([]);
   const dispatch = useDispatch();
+  const globalState = useSelector((state) => state);
   const resultsStep = 10;
 
-  const getDataFromApi = async () => {
-    const tempDataArray = [];
-    switch (listSize) {
-      default:
-        for (let i = listSize; i < listSize + resultsStep; i++) {
-          const apiRespData = await searchByTitle(titleCollection[i]);
-          setMoviesDataHolder((arr) => [...arr, apiRespData]);
-          tempDataArray.push(apiRespData);
-        }
-        dispatch(addMovieDataGlobalState(tempDataArray));
-        break;
-      case 10:
-        for (let i = listSize; i < listSize + resultsStep; i++) {
-          const apiRespData = await searchByTitle(titleCollection[i]);
-          setMoviesDataHolder((arr) => [...arr, apiRespData]);
-          tempDataArray.push(apiRespData);
-        }
-        dispatch(addMovieDataGlobalState(tempDataArray));
-        break;
-      case 20:
-        for (let i = listSize; i < listSize + resultsStep; i++) {
-          const apiRespData = await searchByTitle(titleCollection[i]);
-          setMoviesDataHolder((arr) => [...arr, apiRespData]);
-          tempDataArray.push(apiRespData);
-        }
-        dispatch(addMovieDataGlobalState(moviesDataHolder));
-        break;
+  const getDataFromApi = async (listRange) => {
+    const tempDataArrayForRedux = [];
+    for (let i = listRange; i < listRange + resultsStep; i++) {
+      const apiRespData = await searchByTitle(titleCollection[i]);
+      setMoviesDataHolder((arr) => [...arr, apiRespData]);
+      tempDataArrayForRedux.push(apiRespData);
     }
+    listRange + resultsStep > globalState.movieDataReducer.length &&
+      dispatch(addMovieDataGlobalState(tempDataArrayForRedux));
   };
 
   const renderAllDataFromApi = useCallback((arr) => {
@@ -62,7 +44,7 @@ const TopListLayout = () => {
         textLabel={listSize > 0 ? "SHOW MORE" : "TOP 10"}
         onClick={() => {
           setListSize(listSize + resultsStep);
-          getDataFromApi();
+          getDataFromApi(listSize);
         }}
       />
       <Container>

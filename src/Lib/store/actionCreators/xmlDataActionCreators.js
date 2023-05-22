@@ -3,9 +3,9 @@
 
 import { XML_DATA_ACTION_TYPES } from "../actionTypes";
 
-const addXmlDataGlobalState = (dataArray) => ({
+const addXmlDataGlobalState = (xmlDataToBeAdded) => ({
   type: XML_DATA_ACTION_TYPES.ADD_XML_DATA_GLOBAL_STATE,
-  payload: { dataArray },
+  payload: { xmlDataToBeAdded },
 });
 
 const deleteXmlDataGlobalState = () => ({

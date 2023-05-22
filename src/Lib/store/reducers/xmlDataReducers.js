@@ -7,8 +7,8 @@ const initialState = [];
 const xmlDataReducer = (state = initialState, action) => {
   switch (action.type) {
     case XML_DATA_ACTION_TYPES.ADD_XML_DATA_GLOBAL_STATE:
-      const { dataArray } = action.payload;
-      return [...dataArray];
+      const { xmlDataToBeAdded } = action.payload;
+      return [...xmlDataToBeAdded];
     case XML_DATA_ACTION_TYPES.DELETE_XML_DATA_GLOBAL_STATE:
       return [];
     default:
