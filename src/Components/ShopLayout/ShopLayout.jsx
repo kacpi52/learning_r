@@ -9,9 +9,7 @@ const ShopLayout = ({ mainItemsArray }) => {
   return (
     <Container>
       <Row>
-        <Col xs={12} class="lead">
-          Shop Layout{" "}
-        </Col>
+        <Col xs={12}>Shop Layout </Col>
       </Row>
       <Row>{allItemsRender(mainItemsArray)}</Row>
     </Container>

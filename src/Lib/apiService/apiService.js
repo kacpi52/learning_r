@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const searchByTitle = async (movieTitle) => {
+const searchByTitle = async (movieTitle) => {
   if (typeof movieTitle == "undefined" || movieTitle == "") {
     return {};
   }
@@ -14,3 +14,4 @@ export const searchByTitle = async (movieTitle) => {
     throw error;
   }
 };
+export default searchByTitle;
