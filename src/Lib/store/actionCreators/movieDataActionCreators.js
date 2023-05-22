@@ -3,9 +3,9 @@
 
 import { MOVIE_DATA_ACTION_TYPES } from "../actionTypes";
 
-const addMovieDataGlobalState = (dataArray) => ({
+const addMovieDataGlobalState = (movieDataToBeAdded) => ({
   type: MOVIE_DATA_ACTION_TYPES.ADD_MOVIE_DATA_GLOBAL_STATE,
-  payload: { dataArray },
+  payload: { movieDataToBeAdded },
 });
 
 const deleteMovieDataGlobalState = () => ({
